@@ -1,0 +1,39 @@
+{
+    "language"        : "PYTHON",
+    "main-file"       : "ConvSAX_spearmint.py",
+    "experiment-name" : "ConvlutionSAX",
+    "likelihood"      : "GAUSSIAN",
+    "variables": {
+        "windowWidth" : {
+            "type" : "FLOAT",
+            "size" : 1,
+            "min"  : 0.05,
+            "max"  : 1
+        },
+        "numSymbols" : {
+            "type" : "INT",
+            "size" : 1,
+            "min"  : 3,
+            "max"  : 12
+        },
+        "alphabetSize" : {
+            "type" : "INT",
+            "size" : 1,
+            "min"  : 3,
+            "max"  : 12
+        }
+    },
+    "resources" : {
+        "my-machine" : {
+            "scheduler"         : "local",
+            "max-concurrent"    : 1
+        }
+	},
+    "tasks": {
+        "SVM_cv_acc" : {
+            "type"       : "OBJECTIVE",
+            "likelihood" : "NOISELESS"
+        }
+    }
+}
+
